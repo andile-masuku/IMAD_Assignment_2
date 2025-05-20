@@ -1,0 +1,16 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Themes" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/blueviolet</item>
+        <item name="colorPrimaryDark">@color/purpleblue</item>
+        <item name="colorAccent">@color/skyblue</item>
+    </style>
+
+    <style name="NoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/blueviolet</item>
+        <item name="colorPrimaryDark">@color/purpleblue</item>
+        <item name="colorAccent">@color/skyblue</item>
+    </style>
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </resources>
