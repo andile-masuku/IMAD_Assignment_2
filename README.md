@@ -108,7 +108,7 @@ SOLUTION: was unable to solve it fully
 
 LINKS 
 
-GitHub []
+GitHub [https://github.com/andile-masuku/IMAD_Assignment_2.git]
 YouTube: [https://youtu.be/z_qpxMjLYCg]
 
 REFERENCES 
