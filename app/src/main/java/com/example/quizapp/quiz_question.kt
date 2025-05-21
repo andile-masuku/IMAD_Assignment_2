@@ -23,7 +23,6 @@ class quiz_question : AppCompatActivity() {
 
     companion object {
         val askedquestions = arrayOf(
-
             "Was Kotlin primarily designed for Data analysis?",
             "The developer of the Kotlin language is The JetBrains.",
             "An array is used to store multiple values as a single value.",
@@ -40,6 +39,7 @@ class quiz_question : AppCompatActivity() {
 
     private var points = 0
     private var questionCell = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,26 +58,27 @@ class quiz_question : AppCompatActivity() {
         trueBtn.setOnClickListener { responseCheck(true) }
         falseBtn.setOnClickListener { responseCheck(false) }
 
+        backBtn.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+        backBtn.isEnabled = false
+
         nxtBtn.setOnClickListener {
             questionCell++
-            if (questionCell < askedquestions.size){
+            if (questionCell < askedquestions.size) {
                 showQuestion()
-
                 replyTextView.text = ""
                 trueBtn.isEnabled = true
                 falseBtn.isEnabled = true
 
-
-            }else {
+            } else {
 
                 val intent = Intent(this, scoreScreen::class.java)
                 intent.putExtra("points", points)
                 startActivity(intent)
                 finish()
             }
-            backBtn.setOnClickListener {
-                startActivity(Intent(this, MainActivity::class.java))
-            }
+
         }
         nxtBtn.isEnabled = false
 
@@ -86,6 +87,7 @@ class quiz_question : AppCompatActivity() {
     private fun showQuestion() {
        quesOutput.text = askedquestions[questionCell]
     }
+
     private fun responseCheck (inputResponse: Boolean) {
         val correctResponse = results[questionCell]
 
@@ -93,12 +95,13 @@ class quiz_question : AppCompatActivity() {
             replyTextView.text = "Good Job"
             replyTextView.setTextColor(Color.BLUE)
             points++
-        }else {
+        } else {
             replyTextView.text = " You can do better"
         }
         trueBtn.isEnabled = false
         falseBtn.isEnabled = false
         nxtBtn.isEnabled = true
+        backBtn.isEnabled = true
     }
 
 }

@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import kotlin.system.exitProcess
 
 class scoreScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +24,7 @@ class scoreScreen : AppCompatActivity() {
         val points = intent.getIntExtra("points",0)
         pointsTextView.text = "Your points are: $points/10"
 
-        val response = if (points >= 3 ) {
+        val response = if (points >= 5 ) {
             "Well Done :)"
         }else{
             "You can Still Do Better keep up"
@@ -37,6 +38,11 @@ class scoreScreen : AppCompatActivity() {
             intent.putExtra("results", quiz_question.results)
             startActivity(intent)
         }
+        extBtn.setOnClickListener {
+            finishAffinity()
+            exitProcess(0)
+        }
+
 
     }
 }
