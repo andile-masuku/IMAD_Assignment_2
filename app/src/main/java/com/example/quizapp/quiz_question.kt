@@ -20,8 +20,6 @@ class quiz_question : AppCompatActivity() {
     private lateinit var nxtBtn: Button
     private lateinit var backBtn: Button
 
-    private var score = 0
-    private var questionCell = 0
 
     companion object {
         val askedquestions = arrayOf(
@@ -36,10 +34,12 @@ class quiz_question : AppCompatActivity() {
             "Blue stacks is usually used as a Virtual device to run apps from Android Studio.",
             "An app can not run on Android Studio if there is no Function.",
             "Android Studio only allows the user to only create Four screens maximum"
-
         )
         val results = booleanArrayOf(false,true,true,false,true,false,false,true,false,false)
     }
+
+    private var points = 0
+    private var questionCell = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,21 +55,23 @@ class quiz_question : AppCompatActivity() {
 
         showQuestion()
 
-        trueBtn.setOnClickListener { check(true) }
-        falseBtn.setOnClickListener { check(false) }
+        trueBtn.setOnClickListener { responseCheck(true) }
+        falseBtn.setOnClickListener { responseCheck(false) }
 
         nxtBtn.setOnClickListener {
-            questionCell+1
-            if (askedquestions.size > questionCell){
+            questionCell++
+            if (questionCell < askedquestions.size){
                 showQuestion()
 
-                falseBtn.isEnabled = true
-                trueBtn.isEnabled = true
                 replyTextView.text = ""
+                trueBtn.isEnabled = true
+                falseBtn.isEnabled = true
+
+
             }else {
 
                 val intent = Intent(this, scoreScreen::class.java)
-                intent.putExtra("score", score)
+                intent.putExtra("points", points)
                 startActivity(intent)
                 finish()
             }
@@ -88,11 +90,11 @@ class quiz_question : AppCompatActivity() {
         val correctResponse = results[questionCell]
 
         if (inputResponse == correctResponse) {
-            replyTextView.text = "Good Job :)"
+            replyTextView.text = "Good Job"
             replyTextView.setTextColor(Color.BLUE)
-            score+1
+            points++
         }else {
-            replyTextView.text = " You can do better :("
+            replyTextView.text = " You can do better"
         }
         trueBtn.isEnabled = false
         falseBtn.isEnabled = false

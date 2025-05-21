@@ -1,6 +1,9 @@
 package com.example.quizapp
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -11,10 +14,29 @@ class scoreScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_score_screen)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        val pointsTextView = findViewById<TextView>(R.id.total)
+        val responseTextView = findViewById<TextView>(R.id.answer)
+        val reviewBtn = findViewById<Button>(R.id.review)
+        val extBtn = findViewById<Button>(R.id.extBtn)
+
+        val points = intent.getIntExtra("points",0)
+        pointsTextView.text = "Your points are: $points/10"
+
+        val response = if (points >= 3 ) {
+            "Well Done :)"
+        }else{
+            "You can Still Do Better keep up"
         }
+        responseTextView.text = response
+
+        reviewBtn.setOnClickListener {
+
+            val intent = Intent(this, review::class.java )
+            intent.putExtra("askedQuestions", quiz_question.askedquestions)
+            intent.putExtra("results", quiz_question.results)
+            startActivity(intent)
+        }
+
     }
 }

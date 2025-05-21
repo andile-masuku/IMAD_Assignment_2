@@ -7,4 +7,66 @@
     android:layout_height="match_parent"
     android:background="@drawable/scorescreen"
     android:orientation="vertical"
-    tools:context=".scoreScreen"></androidx.constraintlayout.widget.ConstraintLayout>
+    android:textAlignment="center"
+    tools:context=".scoreScreen">
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="392dp"
+        android:layout_height="134dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/blue"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toTopOf="@+id/answer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.26" />
+
+    <TextView
+        android:id="@+id/answer"
+        android:layout_width="324dp"
+        android:layout_height="73dp"
+        android:layout_marginBottom="132dp"
+        android:background="@color/blueviolet"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toTopOf="@+id/review"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/review"
+        android:layout_width="150dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="64dp"
+        android:background="@color/purpleblue"
+        android:text="Review"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@+id/extBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/extBtn"
+        android:layout_width="150dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="56dp"
+        android:background="@color/seablue"
+        android:text="Exit"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

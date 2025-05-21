@@ -13,6 +13,9 @@
         android:theme="@style/Base.Theme.Quizapp"
         tools:targetApi="31">
         <activity
+            android:name=".review"
+            android:exported="false" />
+        <activity
             android:name=".scoreScreen"
             android:exported="false" />
         <activity
