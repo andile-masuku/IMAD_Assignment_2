@@ -16,7 +16,7 @@ SUBJECT: INTRODUCTION TO MOBILE APPLICATION DEVELOPMENT (IMAD5112)
 
 PROJECT OVERVIEW
 
-This [QuizApp] is a mobile application developed app which is part of an assignment in the course . This app is part and parcel of the use of Android Studio and Kotlin.
+This [QuizApp] is a mobile application developed app which is part of an assignment in the course [IMAD5112]. This app is part and parcel of the use of Android Studio and Kotlin.
 The primary purpose of this app is to help in the development of learning skills , memory development and many more.
 This app was developed to meet the requirements of of the assignment, which include creating a working app using Kotlin language to use GitHub for version control and using GitHub Actions.
 
@@ -79,7 +79,7 @@ This includes:
 •	The workflow ensures that my project is automatically built and tested every time I push changes, and it simplifies the process of delivering the final 
 
 Video Demo:
-A video showcasing the app's functionality can be viewed here: [YouTube Video Link].
+A video showcasing the app's functionality can be viewed here: [https://youtu.be/z_qpxMjLYCg].
 
 
 CHALLENGES & LEARNING
@@ -109,7 +109,7 @@ SOLUTION: was unable to solve it fully
 LINKS 
 
 GitHub []
-YouTube []
+YouTube: [https://youtu.be/z_qpxMjLYCg]
 
 REFERENCES 
 
