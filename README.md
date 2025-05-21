@@ -106,6 +106,11 @@ SOLUTION: had to delete the virtual devices and create another one
 SOLUTION: was unable to solve it fully
 
 
+LINKS 
+
+GitHub []
+YouTube []
+
 REFERENCES 
 
 IMAD5112 Module Manual. (n.d.).
